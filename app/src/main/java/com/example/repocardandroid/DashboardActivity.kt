@@ -1,5 +1,6 @@
 package com.example.repocardandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,17 @@ class DashboardActivity: AppCompatActivity() {
                 }
             }
         }
+        change_password_button.setOnClickListener { redirectToChangePassword() }
+        logout_button.setOnClickListener { logout() }
+    }
 
+    private fun redirectToChangePassword() {
+        startActivity(Intent(this, ChangePasswordActivity::class.java))
+    }
+
+    private fun logout() {
+        SessionManagement(this).clearData()
+//        startActivity(Intent(this, DashboardActivity::class.java))
+        finishAffinity()
     }
 }
