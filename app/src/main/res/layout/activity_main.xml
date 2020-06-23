@@ -40,7 +40,15 @@
                     android:background="#EF5350"
                     android:textColor="#FFF"/>
                 <Button
-                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:id="@+id/login_student_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login Siswa"
+                    android:background="#42A5F5"
+                    android:textColor="#FFF"/>
+                <Button
+                    android:layout_marginTop="@dimen/_25ssp"
                     android:id="@+id/configuration_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
