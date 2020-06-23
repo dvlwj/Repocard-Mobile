@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5ssp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_score"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="3dp"
+    card_view:cardUseCompatPadding="true">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:textSize="@dimen/_15ssp"
+            android:id="@+id/student_name"
+            android:layout_margin="@dimen/_5ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:padding="@dimen/_10ssp"
+            android:textColor="#fff"
+            android:background="#F06292"
+            android:id="@+id/submit_button"
+            android:text="Submit"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

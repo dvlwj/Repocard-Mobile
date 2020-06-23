@@ -7,6 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hello_text"
+            android:textSize="@dimen/_15ssp"
+            android:paddingBottom="@dimen/_10ssp"
+            android:paddingTop="@dimen/_10ssp"
+            android:layout_margin="@dimen/_5ssp"/>
         <androidx.cardview.widget.CardView
             android:layout_margin="@dimen/_5ssp"
             android:layout_width="match_parent"

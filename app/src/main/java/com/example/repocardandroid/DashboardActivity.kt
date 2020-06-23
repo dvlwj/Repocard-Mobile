@@ -30,12 +30,18 @@ class DashboardActivity: AppCompatActivity() {
                 }
             }
         }
+        hello_text?.text = "Selamat Datang, ${session.checkData(session.keyUsername)}."
+        card_teacher.setOnClickListener { redirecToScoreList() }
         change_password_button.setOnClickListener { redirectToChangePassword() }
         logout_button.setOnClickListener { logout() }
     }
 
     private fun redirectToChangePassword() {
         startActivity(Intent(this, ChangePasswordActivity::class.java))
+    }
+
+    private fun redirecToScoreList() {
+        startActivity(Intent(this, ScoreListActivity::class.java))
     }
 
     private fun logout() {

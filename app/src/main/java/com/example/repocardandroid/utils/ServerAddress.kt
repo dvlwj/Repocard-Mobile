@@ -9,6 +9,8 @@ object ServerAddress {
     const val LoginStudent = "/login/siswa"
     const val ChangePassword = "/changePassword"
     const val ChangePasswordSiswa = "/changePassword/student"
+    const val ReadScoreBySubject = "/nilai/readBySubject"
+    const val ReadStudent = "/murid/read"
 //    const val Petugas = MainUrl+"petugas"
 //    const val Absen = MainUrl+"absen"
 //    const val StatusSiswa = MainUrl+"siswa/"
