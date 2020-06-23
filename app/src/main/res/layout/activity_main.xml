@@ -7,39 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/_10ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            <EditText
-                android:layout_marginTop="5sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Username"
-                android:inputType="text"
-                android:id="@+id/login_username"/>
-            <EditText
-                android:layout_marginTop="5sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:id="@+id/login_password"/>
-            <Button
-                android:layout_marginTop="10sp"
-                android:id="@+id/login_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Login" />
-        </LinearLayout>
-    </ScrollView>
+                <EditText
+                    android:layout_marginTop="5sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="text"
+                    android:id="@+id/login_username"/>
+                <EditText
+                    android:layout_marginTop="5sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:id="@+id/login_password"/>
+                <Button
+                    android:layout_marginTop="@dimen/_25ssp"
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:background="#EF5350"
+                    android:textColor="#FFF"/>
+                <Button
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:id="@+id/configuration_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Konfigurasi Server"
+                    android:background="#FFA726"
+                    android:textColor="#FFF"/>
+            </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
