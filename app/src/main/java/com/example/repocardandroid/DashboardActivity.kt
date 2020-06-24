@@ -22,7 +22,7 @@ class DashboardActivity: AppCompatActivity() {
             false -> when (userLevel) {
                 1 -> {
                     card_teacher.visibility = View.GONE
-                    card_score.visibility = View.VISIBLE
+                    card_score.visibility = View.GONE
                 }
                 2 -> {
                     card_teacher.visibility = View.VISIBLE
