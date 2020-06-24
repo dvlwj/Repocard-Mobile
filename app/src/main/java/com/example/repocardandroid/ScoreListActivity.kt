@@ -21,18 +21,16 @@ import org.json.JSONObject
 
 class ScoreListActivity: AppCompatActivity() {
     private var requestArrayList: ArrayList<SiswaModel>? = null
+    private var mAdapter: SiswaAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score_list)
-    }
-
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
+        mAdapter = SiswaAdapter(null)
         loadData()
-        return super.onCreateView(name, context, attrs)
     }
 
-    private fun loadData() {
+    fun loadData() {
         val session = SessionManagement(this)
         val dataToSend = JSONObject()
         val idMatpel = session.checkID(session.keyMatpel)
@@ -47,32 +45,21 @@ class ScoreListActivity: AppCompatActivity() {
                     val stringBuilder = StringBuilder(respond)
                     val parser = Parser.default()
                     val respondParser = parser.parse(stringBuilder) as JsonObject
-                    println("AAAA ${respondParser.toJsonString()}")
+//                    println("AAAA ${respondParser.toJsonString()}")
                     val data = respondParser.array<JsonObject>("data")
-                    println("bbbb ${data}")
+//                    println("bbbb ${data}")
                     when{
                         data?.isNotEmpty()!! -> {
                             val arrayList = data?.map {it1->
                                 SiswaModel(
                                     it1.int("id"),
-                                    it1.string("nama")
+                                    it1.string("nama"),
+                                    it1.string("kelas")
                                 )
                             }
                             println("bbbb ${data}")
                             requestArrayList = ArrayList(arrayList)
-                            val recyclerView = score_recycle_view
-                            val mAdapter = SiswaAdapter(requestArrayList)
-                            val layoutManager = LinearLayoutManager(this)
-                            recyclerView?.setHasFixedSize(true)
-                            recyclerView?.addItemDecoration(
-                                DividerItemDecoration(
-                                    this,
-                                    LinearLayoutManager.VERTICAL
-                                )
-                            )
-                            recyclerView?.layoutManager = layoutManager
-                            recyclerView?.itemAnimator = DefaultItemAnimator()
-                            recyclerView?.adapter = mAdapter
+                            renderRV()
                         }
                     }
                 }
@@ -83,5 +70,21 @@ class ScoreListActivity: AppCompatActivity() {
                 }
             }
 //        println("scoreList : $scoreList and studentList : $studentList")
+    }
+    fun renderRV() {
+        val recyclerView = score_recycle_view
+        mAdapter = SiswaAdapter(requestArrayList)
+//        val layoutManager = LinearLayoutManager(this)
+        recyclerView?.layoutManager = LinearLayoutManager(this)
+        recyclerView?.setHasFixedSize(true)
+//        recyclerView?.addItemDecoration(
+//            DividerItemDecoration(
+//                this,
+//                LinearLayoutManager.VERTICAL
+//            )
+//        )
+//        recyclerView?.layoutManager = layoutManager
+//        recyclerView?.itemAnimator = DefaultItemAnimator()
+        recyclerView?.adapter = mAdapter
     }
 }
