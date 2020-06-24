@@ -22,6 +22,8 @@
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ChangePasswordActivity"/>
         <activity android:name=".ScoreListActivity"/>
+        <activity android:name=".ReportActivity"/>
+        <activity android:name=".ServerActivity"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

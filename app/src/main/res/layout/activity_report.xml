@@ -23,6 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/search_student"
+            android:visibility="gone"
             android:padding="@dimen/_3sdp">
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner_kelas"
@@ -47,11 +49,25 @@
                 android:textColor="#fff"
                 android:text="SEarch"/>
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_siswa"
+        <TextView
+            android:layout_margin="@dimen/_5ssp"
+            android:id="@+id/list_student_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone">
+            android:textSize="@dimen/_15ssp"
+            android:text="Nama Siswa"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_margin="@dimen/_5ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_student_class"
+            android:textSize="@dimen/_15ssp"
+            android:text="Kelas"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_rapor_siswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 </ScrollView>

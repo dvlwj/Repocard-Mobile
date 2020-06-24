@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val session = SessionManagement(this)
+        val ip_address = session.checkServerAddress(session.keyServerAddress)
+        server_ip.text = ip_address
         login_button.setOnClickListener { validateCredentials() }
+        configuration_button.setOnClickListener { startActivity(Intent(applicationContext, ServerActivity::class.java)) }
     }
     private fun validateCredentials() {
         val usernameText = login_username?.text.toString()
@@ -94,10 +98,14 @@ class MainActivity : AppCompatActivity() {
                 val jsonDataDetail = jsonData.getJSONObject("data")
                 val dataAdmin = jsonDataDetail.getString("username")
                 val dataPassword = jsonDataDetail.getString("password")
+                val dataKelas = jsonDataDetail.getString("kelas")
+                val dataID = jsonDataDetail.getInt("id")
                 session.run {
                     updateUsername(dataAdmin)
                     updatePassword(dataPassword)
                     updateSiswa(true)
+                    updateUserID(dataID)
+                    updateKelas(dataKelas)
                 }
                 startActivity(Intent(this, DashboardActivity::class.java))
             }

@@ -10,6 +10,7 @@ class SessionManagement(context: Context?) {
     val keyMatpel         = "user_matpel"
     val keyLevel          = "user_level"
     val keyUserID        = "user_userid"
+    val keyKelas        = "user_kelas"
     val keyServerAddress = "server_address"
     val keySiswa         = "user_siswa"
     private val sharedPrefs= context?.getSharedPreferences(sharedPrefName, Context.MODE_PRIVATE)
@@ -33,6 +34,10 @@ class SessionManagement(context: Context?) {
     }
     fun updateUserID(value: Int){
         sharedPrefsEditor?.putInt(keyUserID,value)
+        sharedPrefsEditor?.apply()
+    }
+    fun updateKelas(value: String){
+        sharedPrefsEditor?.putString(keyKelas,value)
         sharedPrefsEditor?.apply()
     }
     fun updateServerAddress(value: String?){

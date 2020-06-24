@@ -32,6 +32,7 @@ class DashboardActivity: AppCompatActivity() {
         }
         hello_text?.text = "Selamat Datang, ${session.checkData(session.keyUsername)}."
         card_teacher.setOnClickListener { redirecToScoreList() }
+        card_score.setOnClickListener { redirectToReport() }
         change_password_button.setOnClickListener { redirectToChangePassword() }
         logout_button.setOnClickListener { logout() }
     }
@@ -42,6 +43,10 @@ class DashboardActivity: AppCompatActivity() {
 
     private fun redirecToScoreList() {
         startActivity(Intent(this, ScoreListActivity::class.java))
+    }
+
+    private fun redirectToReport() {
+        startActivity(Intent(this, ReportActivity::class.java))
     }
 
     private fun logout() {
