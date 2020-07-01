@@ -41,6 +41,15 @@
                     android:textColor="#FFF"/>
 
                 <Button
+                    android:layout_marginTop="@dimen/_25ssp"
+                    android:id="@+id/webview_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buka"
+                    android:background="#EF5350"
+                    android:textColor="#FFF"/>
+
+                <Button
                     android:layout_marginTop="@dimen/_10ssp"
                     android:id="@+id/configuration_button"
                     android:layout_width="match_parent"

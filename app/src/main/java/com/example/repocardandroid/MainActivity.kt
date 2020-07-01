@@ -2,6 +2,7 @@ package com.example.repocardandroid
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,11 @@ class MainActivity : AppCompatActivity() {
         val session = SessionManagement(this)
         val ip_address = session.checkServerAddress(session.keyServerAddress)
         server_ip.text = ip_address
-        login_button.setOnClickListener { validateCredentials() }
+        login_button.visibility = View.GONE
+        login_username.visibility = View.GONE
+        login_password.visibility = View.GONE
+        webview_button.setOnClickListener { startActivity(Intent(applicationContext, WebViewActivity::class.java)) }
+//        login_button.setOnClickListener { validateCredentials() }
         configuration_button.setOnClickListener { startActivity(Intent(applicationContext, ServerActivity::class.java)) }
     }
     private fun validateCredentials() {

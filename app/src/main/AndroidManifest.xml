@@ -24,6 +24,7 @@
         <activity android:name=".ScoreListActivity"/>
         <activity android:name=".ReportActivity"/>
         <activity android:name=".ServerActivity"/>
+        <activity android:name=".WebViewActivity"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
